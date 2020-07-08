@@ -23,16 +23,17 @@ We began our research by first looking at individual stock's performance based o
 ### Result: Stock Performance in 2017 and 2018
 After applying the same method to all the 12 stocks, we came up with the below two charts. And we formatted the colour of cells’ background based on whether or not the percentage change is positive or negative. 
 
-![ScreenShot]()
+![ScreenShot](Screen Shot 2020-07-08 at 12.23.25 PM.png)
 
-![ScreenShot]()
+![ScreenShot](Screen Shot 2020-07-08 at 12.17.59 PM.png)
 
 it is clearly from the graph 1 that 11 of the total 12 stocks shows a strong performance as they all have increase in their price. Top three performance will be DQ, SEDG and ENPH. Only one stock TERP shows negative changes. However in graph 2, most of the stocks experienced drop in their price and only ENPH and RUN shows remarkable increase in their price with +81.9% and +84%. 
 
 ### Result: Execution time of original script and refactored
 Worth to discuss that under the nested loop method, the execution time is roughly around 0.67 seconds for 2018 and 0.66 seconds for 2017. It may seem to be very quick and acceptable time of execution at the first glance; however imagine if we are handling a massive dataset which consists of more than 1000 stocks, the execution time under the current model may be much more bigger and therefore we need to refactor the model so that it can be more comfortable with dealing large set of data. 
 
-![ScreenShot]()
+![ScreenShot](VBA_Challenge_2017.png)
+![ScreenShot](VBA_Challenge_2018.png)
 
 The way the nest loops works is that: for stock ticker equals to “DQ”, the function search the whole sheet and select those data that fits in our conditions. And once “DQ” is done, they move on to the next stock ticker and search the whole sheet again. And that’s the reason why the execution time can be long because the worksheet gets searched over and over again. One way to refactor this model is to avoid repeating the same step. Since the stocks’ data are organized in assorting order based on the stock symbol, we want to treat this sheet as a list of 12 areas. For example from the second row to the 250th row, all the rows only contains information for stock “AY”. So we set this areas as the “0” index in the list of 12 areas. We only use one loop function to search the worksheet until all the “AY” has been identified then we move to the “1”index area and search the rest of the worksheet. Until the “11”index area is done, the whole sheet get only looped for once but we finished our job. 
 
