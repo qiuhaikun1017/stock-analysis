@@ -32,8 +32,8 @@ it is clearly from the graph 1 that 11 of the total 12 stocks shows a strong per
 ### Result: Execution time of original script and refactored
 Worth to discuss that under the nested loop method, the execution time is roughly around 0.67 seconds for 2018 and 0.66 seconds for 2017. It may seem to be very quick and acceptable time of execution at the first glance; however imagine if we are handling a massive dataset which consists of more than 1000 stocks, the execution time under the current model may be much more bigger and therefore we need to refactor the model so that it can be more comfortable with dealing large set of data. 
 
-![ScreenShot](VBA_Challenge_2017.png)
-![ScreenShot](VBA_Challenge_2018.png)
+![ScreenShot](VBA_Challenge_2017_original.png)
+![ScreenShot](VBA_Challenge_2018_original.png)
 
 The way the nest loops works is that: for stock ticker equals to “DQ”, the function search the whole sheet and select those data that fits in our conditions. And once “DQ” is done, they move on to the next stock ticker and search the whole sheet again. And that’s the reason why the execution time can be long because the worksheet gets searched over and over again. One way to refactor this model is to avoid repeating the same step. Since the stocks’ data are organized in assorting order based on the stock symbol, we want to treat this sheet as a list of 12 areas. For example from the second row to the 250th row, all the rows only contains information for stock “AY”. So we set this areas as the “0” index in the list of 12 areas. We only use one loop function to search the worksheet until all the “AY” has been identified then we move to the “1”index area and search the rest of the worksheet. Until the “11”index area is done, the whole sheet get only looped for once but we finished our job. 
 
@@ -49,7 +49,10 @@ These will help us to declare our result as arrays instead of variable and array
 
  >             tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 9).Value
 
-Unfortunately by far I wrote for this assignment, due to an unresolved bug I am still not able to run the codes successfully without error message. However, as we discussed and compared the way that the original script and refactored script work, I have no doubt that the refactored way will outperformed the original way as it was designed in a way that can successfully prevent analyzing data from repeating the same step over and over again. 
+As per below screeshot, the execution time for both worksheet has been dropped dratically as we hope. Thus we can conduct that the refactoring code works for our research.
+
+![ScreenShot](VBA_Challenge_2017.png)
+![ScreenShot](VBA_Challenge_2018.png)
 
 ## Conclusion 
-Refactoring code can help us to improve the efficiency of model by avoiding duplicate work. In our case, using output arrays to store a list of variable and using index to refer the variable of arrays can help our Marco save time from looping the sheet every time when it move to the next stock. However, it is very important to point out that in our case, the data was sorted in order based on its first letter of its stock symbol. So that we can complete the code by treating them as “12 areas”. This method may not outperform the nested loop method in the case where the data was not as “organized” as ours. Also, refactoring may cause addition error during the time of coding and consume more time to build code than the “simple repeating” code. In my case I spent the whole night to figure out why the error message popped out even I fully understand the concept and the logic of why we are doing in this way.  
+Refactoring code can help us to improve the efficiency of model by avoiding duplicate work. In our case, using output arrays to store a list of variable and using index to refer the variable of arrays can help our Marco save time from looping the sheet every time when it move to the next stock. However, it is very important to point out that in our case, the data was sorted in order based on its first letter of its stock symbol. So that we can complete the code by treating them as “12 areas”. This method may not outperform the nested loop method in the case where the data was not as “organized” as ours. Also, refactoring may cause addition error during the time of coding and consume more time to build code than the “simple repeating” code. In my case I spent the whole night to figure out why the error message popped out even I fully understand the concept and the logic of why we are doing in this way. And finaly can identify the error by the help of my class.
