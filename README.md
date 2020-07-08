@@ -54,5 +54,6 @@ As per below screeshot, the execution time for both worksheet has been dropped d
 ![ScreenShot](VBA_Challenge_2017.png)
 ![ScreenShot](VBA_Challenge_2018.png)
 
+
 ## Conclusion 
 Refactoring code can help us to improve the efficiency of model by avoiding duplicate work. In our case, using output arrays to store a list of variable and using index to refer the variable of arrays can help our Marco save time from looping the sheet every time when it move to the next stock. However, it is very important to point out that in our case, the data was sorted in order based on its first letter of its stock symbol. So that we can complete the code by treating them as “12 areas”. This method may not outperform the nested loop method in the case where the data was not as “organized” as ours. Also, refactoring may cause addition error during the time of coding and consume more time to build code than the “simple repeating” code. In my case I spent the whole night to figure out why the error message popped out even I fully understand the concept and the logic of why we are doing in this way. And finaly can identify the error by the help of my class.
