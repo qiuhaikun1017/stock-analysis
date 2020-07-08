@@ -51,8 +51,8 @@ These will help us to declare our result as arrays instead of variable and array
 
 As per below screeshot, the execution time for both worksheet has been dropped dratically as we hope. Thus we can conduct that the refactoring code works for our research.
 
-![ScreenShot](VBA_Challenge_2017.png)
 ![ScreenShot](VBA_Challenge_2018.png)
+![ScreenShot](VBA_Challenge_2017.png)
 
 
 ## Conclusion 
