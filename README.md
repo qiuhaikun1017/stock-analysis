@@ -23,9 +23,9 @@ We began our research by first looking at individual stock's performance based o
 ### Result: Stock Performance in 2017 and 2018
 After applying the same method to all the 12 stocks, we came up with the below two charts. And we formatted the colour of cells’ background based on whether or not the percentage change is positive or negative. 
 
-![ScreenShot](Screen Shot 2020-07-08 at 12.23.25 PM.png)
+![ScreenShot](2017.png)
 
-![ScreenShot](Screen Shot 2020-07-08 at 12.17.59 PM.png)
+![ScreenShot](2018.png)
 
 it is clearly from the graph 1 that 11 of the total 12 stocks shows a strong performance as they all have increase in their price. Top three performance will be DQ, SEDG and ENPH. Only one stock TERP shows negative changes. However in graph 2, most of the stocks experienced drop in their price and only ENPH and RUN shows remarkable increase in their price with +81.9% and +84%. 
 
